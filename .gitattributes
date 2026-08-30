@@ -1,0 +1,23 @@
+# 默认让 Git 自动识别文本文件，仓库内统一使用 LF 换行（跨平台标准）
+* text=auto eol=lf
+
+# Windows 脚本如需保留 CRLF 可在此声明（本项目一般用不到）
+# *.cmd text eol=crlf
+# *.bat text eol=crlf
+
+# 二进制资源：不做任何换行符/文本转换
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
+*.zip binary
+*.gz binary
+
+# SVG 本质是文本，正常走文本规则
+*.svg text
