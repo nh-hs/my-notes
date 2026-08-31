@@ -35,7 +35,9 @@ publish: false
 - [深度学习](/notes/ML_DL_NLP/深度学习)
 - [NLP](/notes/ML_DL_NLP/NLP)
 
-## 项目实战
+## 项目demo
+- [文本分类](/notes/text_classification_demo/文本分类)
+
+## RAG
 - [RAG](/notes/RAG/RAG)
 - [KnowForgeRag](/notes/KnowForgeRag/KnowForgeRag)
-- [文本分类](/notes/text_classification_demo/文本分类)

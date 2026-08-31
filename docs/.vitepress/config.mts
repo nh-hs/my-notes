@@ -78,13 +78,7 @@ export default defineConfig({
           text: 'RAG',
           collapsed: false,
           items: [
-            { text: 'RAG', link: '/notes/RAG/RAG' }
-          ]
-        },
-        {
-          text: 'KnowForgeRag',
-          collapsed: false,
-          items: [
+            { text: 'RAG', link: '/notes/RAG/RAG' },
             { text: 'KnowForgeRag', link: '/notes/KnowForgeRag/KnowForgeRag' }
           ]
         },
