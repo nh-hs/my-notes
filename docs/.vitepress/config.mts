@@ -1,15 +1,34 @@
 import { defineConfig } from 'vitepress'
+import { getThemeConfig } from '@sugarat/theme/node'
+
+// 博客主题独有配置（详见 https://theme.sugarat.top）
+const blogTheme = getThemeConfig({
+  // 关闭主题内置的 pagefind 搜索（其 Vue 组件在当前环境编译报错），
+  // 沿用 themeConfig.search 配置的 VitePress 本地搜索
+  search: false
+})
 
 export default defineConfig({
+  // 继承博客主题；官方默认主题的 nav / sidebar / 中文文案依然生效
+  extends: blogTheme,
   lang: 'zh-CN',
   title: '我的学习笔记',
   description: '记录学习过程',
-  lastUpdated: true,
+  // 关闭「最后更新」时间：该时间取自 Git 提交记录，云端浅克隆会导致失真
+  lastUpdated: false,
+  vite: {
+    ssr: {
+      // 主题及其插件含 .vue 组件，交给 Vite 编译而非让 Node 直接加载，
+      // 否则 SSR 阶段会报 Unknown file extension ".vue"
+      noExternal: [/@sugarat\/theme/, /vitepress-plugin/]
+    }
+  },
   themeConfig: {
     search: { provider: 'local' },   // 开启全站本地搜索
     nav: [
       { text: '首页', link: '/' },
-      { text: '笔记总览', link: '/notes/' }
+      { text: '笔记总览', link: '/notes/' },
+      { text: '标签', link: '/tags' }
     ],
     // 只在 /notes/ 路径下显示笔记侧边栏，首页保持干净
     sidebar: {

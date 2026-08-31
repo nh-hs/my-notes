@@ -7,6 +7,10 @@ node_modules/
 # ==================== VitePress / Vite 构建产物与缓存 ====================
 docs/.vitepress/dist/
 docs/.vitepress/cache/
+# 构建期临时目录（每次 build 都会重新生成）
+docs/.vitepress/.temp/
+# Vite dev/build 生成的临时编译文件（带 timestamp 后缀），非源码，切勿提交
+docs/.vitepress/**/*.timestamp-*.mjs
 node_modules/.vite/
 dist/
 out/
@@ -55,3 +59,6 @@ $RECYCLE.BIN/
 *.temp
 *.bak
 *.swp
+
+# ==================== 工作区本地工具目录（不提交）====================
+.workbuddy/
